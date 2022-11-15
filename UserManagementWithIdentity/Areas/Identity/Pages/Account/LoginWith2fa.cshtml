@@ -12,7 +12,7 @@
         <form method="post" asp-route-returnUrl="@Model.ReturnUrl">
             <input asp-for="RememberMe" type="hidden" />
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
+            <div class="form-floating  mt-2">
                 <input asp-for="Input.TwoFactorCode" class="form-control" autocomplete="off" />
                 <label asp-for="Input.TwoFactorCode" class="form-label"></label>
                 <span asp-validation-for="Input.TwoFactorCode" class="text-danger"></span>
