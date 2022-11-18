@@ -28,6 +28,12 @@ builder.Services.AddAuthentication().AddGoogle(options =>
     options.ClientId = GoogleAuth["ClientId"];
     options.ClientSecret = GoogleAuth["ClientSecret"];
 
+}).AddFacebook(options =>
+{
+    IConfiguration FaceBookAuth = builder.Configuration.GetSection("Authentication:FaceBook");
+    options.AppId = FaceBookAuth["AppID"];
+    options.AppSecret = FaceBookAuth["AppSecret"];
+
 });
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
