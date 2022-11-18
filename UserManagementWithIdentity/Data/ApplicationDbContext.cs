@@ -32,7 +32,13 @@ namespace UserManagementWithIdentity.Data
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "Security");
 
 
+       
+        
+        
+        
+        
         }
+
 
 
     }

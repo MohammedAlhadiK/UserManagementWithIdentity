@@ -6,6 +6,6 @@ namespace UserManagementWithIdentity.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string ProfilePicture { get; set; } = string.Empty;
+        public byte[] ProfilePicture { get; set; } = new byte[0];
     }
 }

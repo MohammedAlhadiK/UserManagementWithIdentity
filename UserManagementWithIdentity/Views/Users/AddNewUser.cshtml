@@ -1,0 +1,48 @@
+﻿@model AddNewUserViewModel
+@{
+    ViewData["Title"] = "Add New User";
+}
+
+<div class="row">
+    <div class="col-md-8">
+        <form id="registerForm" asp-action="AddNewUser" method="post">
+            <h2>Create a new User.</h2>
+            <hr />
+            <div class="form-floating mt-2">
+                <input asp-for="FirstName" class="form-control" autocomplete="FirstName" aria-required="true" />
+                <label asp-for="FirstName"></label>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <input asp-for="LastName" class="form-control" autocomplete="LastName" aria-required="true" />
+                <label asp-for="LastName"></label>
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <input asp-for="Email" class="form-control" autocomplete="Email" aria-required="true" />
+                <label asp-for="Email"></label>
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <input asp-for="UserName" class="form-control" autocomplete="UserName" aria-required="true" />
+                <label asp-for="UserName"></label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <input asp-for="Password" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="Password"></label>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-floating mt-2">
+                <input asp-for="ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
+                <label asp-for="ConfirmPassword"></label>
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary mt-2">Register</button>
+        </form>
+    </div>
+ </div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

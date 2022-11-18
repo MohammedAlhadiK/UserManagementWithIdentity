@@ -129,16 +129,16 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
                     var user = CreateUser();
                     user.FirstName = Input.FirstName;
                     user.LastName = Input.LastName;
-                    user.UserName =new MailAddress(Input.Email).User;
+                    user.UserName = new MailAddress(Input.Email).User;
 
                     await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                     await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-
                     var result = await _userManager.CreateAsync(user, Input.Password);
 
                     if (result.Succeeded)
                     {
-                        _logger.LogInformation($"User [{user.FirstName + " " + user.LastName }] created a new account with password.");
+                        _logger.LogInformation($"User [{user.FirstName + " " + user.LastName}] created a new account with password.");
+                        await _userManager.AddPasswordAsync(user, ConstRoles.User);
 
                         var userId = await _userManager.GetUserIdAsync(user);
                         var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -148,7 +148,7 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
                             pageHandler: null,
                             values: new { area = "Identity", userId = userId, code = code, returnUrl = returnUrl },
                             protocol: Request.Scheme);
-
+                        await _userManager.AddToRoleAsync(user, ConstRoles.User);
                         await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
                             $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
 

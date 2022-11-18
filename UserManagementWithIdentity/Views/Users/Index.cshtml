@@ -1,0 +1,105 @@
+﻿@model IEnumerable<UserViewModel>
+@{
+    ViewData["Title"] = "Manage Roles";
+}
+<div class="mb-3">
+
+    <a class="btn btn-primary text-white" asp-action="AddNewUser" asp-controller="Users" title="AddNewUser">Add User</a>
+</div>
+
+@*<partial name="_RoleForm" model="new RoleFormViewModel()"></partial>*@
+<table class="table table-hover">
+    <thead>
+        <tr class="bg-dark text-white">
+            <th scope="col">#</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Roles</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+
+            <tr>
+                <th scope="row">@user.Id</th>
+                <td>@user.FirstName</td>
+                <td>@user.LastName</td>
+                <td>@user.UserName</td>
+                <td>@user.Email</td>
+                <td>@string.Join(" , ",user.Roles.ToList())</td>
+                <td>
+                    <a class="btn btn-primary text-white" asp-action="ManageRoles" asp-controller="Users" asp-route-id="@user.Id" title="Manage">Manage Roles</a>
+                    <a href="javascript:;" class="btn btn-danger text-white js-delete" data-id="@user.Id" title="Delete">Delete</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function () {
+
+
+            $('.js-delete').on('click', function () {
+                var btn = $(this);
+                console.log(btn)
+
+
+                bootbox.confirm({
+                    message: "This is a confirm with custom button text and color! Do you like it?",
+                    buttons: {
+                        confirm: {
+                            label: 'Yes',
+                            className: 'btn-danger'
+                        },
+                        cancel: {
+                            label: 'No',
+                            className: 'btn-success'
+                        }
+                    },
+                    callback: function (result) {
+
+                        if (result) {
+
+                            $.ajax({
+                                url: '/api/Users/DeleteUser?id=' + btn.data('id'),
+                                method: 'DELETE',
+                                success: function () {
+
+                                    btn.parents('tr').fadeOut()
+                                    var dialog = bootbox.dialog({
+                                        message: '<div class="alert alert-success text-center mt-2" role="alert">Successfully Deleted!</ div > ',
+                                        closeButton: true
+                                        
+                                    });
+
+                                    dialog.modal('hide');
+                                },
+                                error: function () {
+                                    var dialog = bootbox.dialog({
+                                        message: '<div class="alert alert-success text-center mt-2" role="alert">Error!</ div > ',
+                                        closeButton: true
+                                    });
+
+                                    dialog.modal('hide');
+                                }
+
+
+                            });
+
+                        }
+                    }
+                });
+
+            })
+
+        });
+    </script>
+}
