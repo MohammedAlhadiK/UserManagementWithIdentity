@@ -18,6 +18,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.WebUtilities;
 using Microsoft.Extensions.Logging;
 using UserManagementWithIdentity.Models;
+using System.Net.Mail;
 
 namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
 {
@@ -85,6 +86,14 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+            [Required]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Display(Name = "First Name")]
+            public string FirstName { get; set; }
+            [Required]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [Display(Name = "Last Name")]
+            public string LastName { get; set; }
         }
         
         public IActionResult OnGet() => RedirectToPage("./Login");
@@ -153,6 +162,9 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                user.FirstName = Input.FirstName;
+                user.LastName = Input.LastName;
+                user.UserName = new MailAddress(Input.Email).User;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

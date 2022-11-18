@@ -22,7 +22,13 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>(opions =>
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultUI()
                 .AddDefaultTokenProviders();
+builder.Services.AddAuthentication().AddGoogle(options =>
+{
+    IConfiguration GoogleAuth = builder.Configuration.GetSection("Authentication:Google");
+    options.ClientId = GoogleAuth["ClientId"];
+    options.ClientSecret = GoogleAuth["ClientSecret"];
 
+});
 builder.Services.AddControllersWithViews();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 var app = builder.Build();
