@@ -9,11 +9,11 @@ using UserManagementWithIdentity.Data;
 
 #nullable disable
 
-namespace UserManagementWithIdentity.Data.Migrations
+namespace UserManagementWithIdentity.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221116204414_AddRolesseeds11")]
-    partial class AddRolesseeds11
+    [Migration("20221119005444_seedsRoles")]
+    partial class seedsRoles
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

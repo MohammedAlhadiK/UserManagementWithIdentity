@@ -31,7 +31,7 @@ namespace UserManagementWithIdentity.Controllers
         // GET: UsersController
         public async Task<IActionResult> Index()
         {
-            var Users = _userManager.Users.Select(user => new UserViewModel()
+            var Users = await _userManager.Users.Select( user => new UserViewModel()
             {
                 Id = user.Id,
                 UserName = user.UserName,
@@ -40,7 +40,7 @@ namespace UserManagementWithIdentity.Controllers
                 LastName = user.LastName,
                 Roles = _userManager.GetRolesAsync(user).Result,
 
-            }).ToList();
+            }).ToListAsync();
             return View(Users);
         }
 

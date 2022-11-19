@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="NewFolder\" />
+    <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
 </Project>

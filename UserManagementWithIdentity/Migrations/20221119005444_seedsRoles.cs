@@ -2,26 +2,27 @@
 
 #nullable disable
 
-namespace UserManagementWithIdentity.Data.Migrations
+namespace UserManagementWithIdentity.Migrations
 {
-    public partial class seeds : Migration
+    public partial class seedsRoles : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "Name", "NormalizedName", "ConcurrencyStamp" },
-                values: new object[] { Guid.NewGuid().ToString(),"User", "User".ToUpper(), Guid.NewGuid().ToString() },
+                values: new object[] { Guid.NewGuid().ToString(), "User", "User".ToUpper(), Guid.NewGuid().ToString() },
                 schema: "Security"
 
                 );
             migrationBuilder.InsertData(
                 table: "Roles",
                 columns: new[] { "Id", "Name", "NormalizedName", "ConcurrencyStamp" },
-                values: new object[] { Guid.NewGuid().ToString(),"Admin", "Admin".ToUpper(), Guid.NewGuid().ToString() },
+                values: new object[] { Guid.NewGuid().ToString(), "Admin", "Admin".ToUpper(), Guid.NewGuid().ToString() },
                 schema: "Security"
 
                 );
+          
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

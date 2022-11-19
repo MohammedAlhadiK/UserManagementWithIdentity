@@ -23,7 +23,7 @@ namespace UserManagementWithIdentity.Data
             builder.HasDefaultSchema("IDI");
             //ignore EmailConfirmed from the Users table
             //builder.Entity<IdentityUser>().Ignore(u => u.EmailConfirmed);
-            builder.Entity<ApplicationUser>().ToTable("Users" , "Security"); // renaming the table and renaming it's SCHEMA
+            builder.Entity<ApplicationUser>().ToTable("Users", "Security"); // renaming the table and renaming it's SCHEMA
             builder.Entity<IdentityRole>().ToTable("Roles", "Security");
             builder.Entity<IdentityUserRole<string>>().ToTable("UserRoles", "Security");
             builder.Entity<IdentityUserToken<string>>().ToTable("UserTokens", "Security");
@@ -32,11 +32,11 @@ namespace UserManagementWithIdentity.Data
             builder.Entity<IdentityUserClaim<string>>().ToTable("UserClaims", "Security");
 
 
-       
-        
-        
-        
-        
+
+
+
+
+
         }
 
 
