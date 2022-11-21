@@ -9,3 +9,6 @@ https://www.youtube.com/watch?v=UO3-5L97ZyQ&list=PL62tSREI9C-ckcxmul8dQiv7KWbHKy
 # Publsih On Free Host [SOMEE]
 
 https://www.youtube.com/watch?v=dU16ESUZljM&list=PL62tSREI9C-d9Y843OBs317_7OMluGABq&index=1
+
+# Adding Todo List [Card Items]
+https://www.bootdey.com/snippets/view/events-card-widget#css
