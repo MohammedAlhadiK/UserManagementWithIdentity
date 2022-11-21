@@ -1,0 +1,75 @@
+﻿@model UserManagementWithIdentity.Models.MyTask
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Task</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Status" class="control-label"></label>
+                @*                <input asp-for="Status" class="form-control" />
+                *@
+
+                @foreach (var item in Html.GetEnumSelectList<TaskStatus>())
+                {
+
+                    @*<input type="radio"/>*@
+                    <div class="row">
+
+                        <input asp-for="Status" class="col-lg-2" type="radio" value="@item.Value" />
+                        <div class="col-lg-8">
+                            @item.Text
+                        </div>
+                    </div>
+                    <br />
+
+                }
+                <span asp-validation-for="Status" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskDate" class="control-label"></label>
+                <input asp-for="TaskDate" class="form-control" />
+                <span asp-validation-for="TaskDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTimeFrom" class="control-label"></label>
+                <input asp-for="TaskTimeFrom" class="form-control" />
+                <span asp-validation-for="TaskTimeFrom" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TaskTimeTo" class="control-label"></label>
+                <input asp-for="TaskTimeTo" class="form-control" />
+                <span asp-validation-for="TaskTimeTo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    }

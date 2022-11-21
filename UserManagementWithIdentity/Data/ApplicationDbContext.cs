@@ -36,8 +36,8 @@ namespace UserManagementWithIdentity.Data
 
 
 
-
         }
+        public DbSet<MyTask> myTasks { get; set; }
 
 
 
