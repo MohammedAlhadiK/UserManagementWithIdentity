@@ -95,7 +95,7 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
         }
-        
+
         public IActionResult OnGet() => RedirectToPage("./Login");
 
         public IActionResult OnPost(string provider, string returnUrl = null)
@@ -168,7 +168,9 @@ namespace UserManagementWithIdentity.Areas.Identity.Pages.Account
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
+                await _userManager.AddToRoleAsync(user, ConstRoles.User);
 
+                
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {

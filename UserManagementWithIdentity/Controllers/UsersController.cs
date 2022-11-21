@@ -26,12 +26,10 @@ namespace UserManagementWithIdentity.Controllers
             _userManager = userManager;
         }
 
-
-
         // GET: UsersController
         public async Task<IActionResult> Index()
         {
-            var Users = await _userManager.Users.Select( user => new UserViewModel()
+            var Users = _userManager.Users.Select(user => new UserViewModel()
             {
                 Id = user.Id,
                 UserName = user.UserName,
@@ -40,7 +38,8 @@ namespace UserManagementWithIdentity.Controllers
                 LastName = user.LastName,
                 Roles = _userManager.GetRolesAsync(user).Result,
 
-            }).ToListAsync();
+            }).ToArray();
+
             return View(Users);
         }
 
@@ -88,15 +87,14 @@ namespace UserManagementWithIdentity.Controllers
         {
             var user = await _userManager.FindByIdAsync(id);
             if (user == null) return NotFound();
-            await _userManager.DeleteAsync(user); 
+            await _userManager.DeleteAsync(user);
 
             return RedirectToAction(nameof(Index));
         }
 
         [HttpGet]
         [Route("AddNewUser")]
-
-        public async Task<IActionResult> AddNewUser()
+        public IActionResult AddNewUser()
         {
             return View(new AddNewUserViewModel());
         }
@@ -142,7 +140,7 @@ namespace UserManagementWithIdentity.Controllers
                 {
                     await _userManager.AddToRoleAsync(user, ConstRoles.User);
                     var id = user.Id;
-                    return RedirectToAction(nameof(ManageRoles), "Users", new {  id });
+                    return RedirectToAction(nameof(ManageRoles), "Users", new { id });
                 }
             }
             catch (Exception)
@@ -153,25 +151,6 @@ namespace UserManagementWithIdentity.Controllers
 
             return View("AddNewUser", model);
 
-        }
-
-
-
-
-
-        // POST: UsersController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         // GET: UsersController/Edit/5
@@ -195,25 +174,5 @@ namespace UserManagementWithIdentity.Controllers
             }
         }
 
-        // GET: UsersController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: UsersController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
     }
 }

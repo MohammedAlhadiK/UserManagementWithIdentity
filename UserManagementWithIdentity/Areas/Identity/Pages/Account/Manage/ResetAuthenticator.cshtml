@@ -5,7 +5,6 @@
     ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
 }
 
-<partial name="_StatusMessage" for="StatusMessage" />
 <h3>@ViewData["Title"]</h3>
 <div class="alert alert-warning" role="alert">
     <p>
@@ -22,3 +21,5 @@
         <button id="reset-authenticator-button" class="btn btn-danger" type="submit">Reset authenticator key</button>
     </form>
 </div>
+
+<partial name="_StatusMessage" for="StatusMessage" />

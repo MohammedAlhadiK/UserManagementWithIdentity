@@ -6,7 +6,7 @@
     @if (SignInManager.IsSignedIn(User))
     {
         <li class="nav-item">
-            @if (UserManager.GetUserAsync(User).Result.ProfilePicture.Length <10)
+            @if (UserManager.GetUserAsync(User).Result.ProfilePicture.Length < 10)
             {
 
                 <img alt="profile" id="profilePicture1" class="avatar" src="~/images/User-Profile-PNG.png" />

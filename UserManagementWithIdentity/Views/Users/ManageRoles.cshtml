@@ -1,19 +1,19 @@
 ﻿@model UserRolesViewModel
-<div class="card">
+<div class="card w-25 m-auto">
     <form method="post" asp-action="ManageUserRoles" asp-controller="Users" enctype="multipart/form-data">
         <div class="card-header">
             @Model.UserName
         </div>
-        <div class="card-body">
+        <div class="card-body ">
             @* <h5 class="card-title">Special title treatment</h5>
             <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>*@
-             
+
             @for (int i = 0; i < Model.Roles.Count(); i++)
             {
                 <div class="input-group mb-3">
                     <div class="input-group-prepend">
                         <div class="input-group-text">
-                            <input type="checkbox" asp-for="@Model.Roles[i].isSelected"  >
+                            <input type="checkbox" asp-for="@Model.Roles[i].isSelected">
                             @* @if (role.isSelected)
                         {
                         }
