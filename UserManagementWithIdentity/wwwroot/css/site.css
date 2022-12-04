@@ -20,17 +20,16 @@ body {
 .profilePicture {
     width: 310px;
     height: 320px;
- }
+}
 
 #uploadImage {
     visibility: hidden;
 }
 
-.avatar{
-    width:38px;
-    height:40px
+.avatar {
+    width: 38px;
+    height: 40px;
 }
-
 
 .card-margin {
     margin-bottom: 1.875rem;
@@ -89,14 +88,20 @@ body {
         border-radius: 50%;
     }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-day {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-primary
+        .widget-49-date-day {
             color: #4e73e5;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-primary .widget-49-date-month {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-primary
+        .widget-49-date-month {
             color: #4e73e5;
             line-height: 1;
             font-size: 1rem;
@@ -114,14 +119,20 @@ body {
         border-radius: 50%;
     }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-day {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-secondary
+        .widget-49-date-day {
             color: #dde1e9;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-secondary .widget-49-date-month {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-secondary
+        .widget-49-date-month {
             color: #dde1e9;
             line-height: 1;
             font-size: 1rem;
@@ -139,14 +150,20 @@ body {
         border-radius: 50%;
     }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-day {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-success
+        .widget-49-date-day {
             color: #17d1bd;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-success .widget-49-date-month {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-success
+        .widget-49-date-month {
             color: #17d1bd;
             line-height: 1;
             font-size: 1rem;
@@ -189,15 +206,21 @@ body {
         border-radius: 50%;
     }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-day {
-            color: #FFC868;
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-warning
+        .widget-49-date-day {
+            color: #ffc868;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-warning .widget-49-date-month {
-            color: #FFC868;
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-warning
+        .widget-49-date-month {
+            color: #ffc868;
             line-height: 1;
             font-size: 1rem;
             text-transform: uppercase;
@@ -215,14 +238,17 @@ body {
     }
 
         .widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-day {
-            color: #F95062;
+            color: #f95062;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-danger .widget-49-date-month {
-            color: #F95062;
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-danger
+        .widget-49-date-month {
+            color: #f95062;
             line-height: 1;
             font-size: 1rem;
             text-transform: uppercase;
@@ -246,7 +272,10 @@ body {
             line-height: 1;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-date-light .widget-49-date-month {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-date-light
+        .widget-49-date-month {
             color: #f7f9fa;
             line-height: 1;
             font-size: 1rem;
@@ -290,14 +319,14 @@ body {
     }
 
         .widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-day {
-            color: #68CBD7;
+            color: #68cbd7;
             font-weight: 500;
             font-size: 1.5rem;
             line-height: 1;
         }
 
         .widget-49 .widget-49-title-wrapper .widget-49-date-base .widget-49-date-month {
-            color: #68CBD7;
+            color: #68cbd7;
             line-height: 1;
             font-size: 1rem;
             text-transform: uppercase;
@@ -309,20 +338,26 @@ body {
         margin-left: 1rem;
     }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-pro-title {
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-meeting-info
+        .widget-49-pro-title {
             color: #3c4142;
             font-size: 14px;
         }
 
-        .widget-49 .widget-49-title-wrapper .widget-49-meeting-info .widget-49-meeting-time {
-            color: #B1BAC5;
+        .widget-49
+        .widget-49-title-wrapper
+        .widget-49-meeting-info
+        .widget-49-meeting-time {
+            color: #b1bac5;
             font-size: 13px;
         }
 
 .widget-49 .widget-49-meeting-points {
     font-weight: 400;
     font-size: 13px;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
 
     .widget-49 .widget-49-meeting-points .widget-49-meeting-item {
@@ -331,7 +366,7 @@ body {
     }
 
         .widget-49 .widget-49-meeting-points .widget-49-meeting-item span {
-            margin-left: .5rem;
+            margin-left: 0.5rem;
         }
 
 .widget-49 .widget-49-meeting-action {
@@ -341,4 +376,3 @@ body {
     .widget-49 .widget-49-meeting-action a {
         text-transform: uppercase;
     }
-

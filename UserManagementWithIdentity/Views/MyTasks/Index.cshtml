@@ -36,13 +36,16 @@
                                 <span class="widget-49-meeting-time"> @Html.DisplayFor(modelItem => item.TaskTimeFrom) to  @Html.DisplayFor(modelItem => item.TaskTimeTo)</span>
                             </div>
                         </div>
-                        <ol class="widget-49-meeting-points">
+                        <ul class="widget-49-meeting-points">
                             @*    <li class="widget-49-meeting-item"><span>Expand module is removed</span></li>
                         <li class="widget-49-meeting-item"><span>Data migration is in scope</span></li>
                         <li class="widget-49-meeting-item"><span>Session timeout increase to 30 minutes</span></li>
                         *@
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </ol>
+                            <li class="widget-49-meeting-item">
+
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </li>
+                        </ul>
                         <div class="widget-49-meeting-action">
                             <a asp-action="Edit" class="btn btn-sm fw-bold text-light btn-warning " asp-route-id="@item.ID">Edit</a>
                             <a asp-action="Details" class="btn btn-sm  fw-bold text-light btn-info" asp-route-id="@item.ID">Details</a>

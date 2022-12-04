@@ -27,12 +27,18 @@ builder.Services.AddAuthentication().AddGoogle(options =>
     IConfiguration GoogleAuth = builder.Configuration.GetSection("Authentication:Google");
     options.ClientId = GoogleAuth["ClientId"];
     options.ClientSecret = GoogleAuth["ClientSecret"];
+    options.SaveTokens=false;
+    options.AccessDeniedPath = "/";
+    options.ForwardSignOut = "";
 
 }).AddFacebook(options =>
 {
+    
+    options.AccessDeniedPath = "/";
     IConfiguration FaceBookAuth = builder.Configuration.GetSection("Authentication:FaceBook");
     options.AppId = FaceBookAuth["AppID"];
     options.AppSecret = FaceBookAuth["AppSecret"];
+
 
 });
 builder.Services.AddControllersWithViews();
