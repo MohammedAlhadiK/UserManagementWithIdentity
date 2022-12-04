@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using UserManagementWithIdentity.Enums;
 
 namespace UserManagementWithIdentity.Models
 {
@@ -20,7 +21,7 @@ namespace UserManagementWithIdentity.Models
         public string Description { get; set; } = string.Empty;
         [Required]
         [Display(Name = "Task Status")]
-        public TaskStatus? Status { get; set; }
+        public Tsk_Status? Status { get; set; }
         [DataType(DataType.Date)]
         [Required]
         [Display(Name = "Task Date")]

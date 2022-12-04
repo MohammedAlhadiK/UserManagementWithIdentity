@@ -1,4 +1,5 @@
-﻿@model UserManagementWithIdentity.Models.MyTask
+﻿@using UserManagementWithIdentity.Enums;
+@model UserManagementWithIdentity.Models.MyTask
 
 @{
     ViewData["Title"] = "Create";
@@ -33,11 +34,9 @@
                 *@
                 <div class="row">
 
-                    @foreach (var item in Html.GetEnumSelectList<TaskStatus>())
+                    @foreach (var item in Html.GetEnumSelectList<Tsk_Status>())
                     {
                         <div class="col-md-4">
-
-                            @*<input type="radio"/>*@
                             <div class="row">
 
                                 <input asp-for="Status" class="col-lg-2" type="radio" value="@item.Value" />
