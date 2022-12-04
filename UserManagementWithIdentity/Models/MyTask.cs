@@ -1,6 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
-using System.Xml.Linq;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace UserManagementWithIdentity.Models
 {
@@ -12,6 +11,9 @@ namespace UserManagementWithIdentity.Models
         [Required]
         [Display(Name = "Task Name")]
         public string Name { get; set; } = string.Empty;
+        [Required]
+        [Display(Name = "Task Owner")]
+        public string Owner { get; set; } = "Owner";
         [Required]
         [DataType(DataType.MultilineText)]
         [Display(Name = "Task Description")]

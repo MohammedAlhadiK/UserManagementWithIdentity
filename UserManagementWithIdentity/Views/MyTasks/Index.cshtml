@@ -32,7 +32,7 @@
                             </div>
                             <div class="widget-49-meeting-info">
                                 <span class="widget-49-pro-title">@item.Status</span>
-                                <span class="widget-49-meeting-time text-secondary">Creator Name </span>
+                                <span class="widget-49-meeting-time text-secondary">@Html.DisplayFor(modelItem => item.Owner)</span>
                                 <span class="widget-49-meeting-time"> @Html.DisplayFor(modelItem => item.TaskTimeFrom) to  @Html.DisplayFor(modelItem => item.TaskTimeTo)</span>
                             </div>
                         </div>
